@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { Subscription } from 'rxjs';
+import { WeatherService } from 'src/app/services/weather.service';
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -8,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
 
-  ccity: string;
+  city: string;
   state: string;
   temp: number;
   hum: number;

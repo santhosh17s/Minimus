@@ -10,6 +10,9 @@ import { DetailsComponent } from './details/details.component';
 import { AddComponent } from './pages/add/add.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { WeatherService } from 'src/app/services/weather.service';
+import { UiService } from 'src/app/services/uiservice.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,12 @@ import { SignupComponent } from './pages/signup/signup.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ 
+    WeatherService,
+    UiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
