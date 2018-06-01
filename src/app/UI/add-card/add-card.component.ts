@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UiService } from 'src/app/services/uiservice.service';
+
 
 @Component({
   selector: 'app-add-card',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCardComponent implements OnInit {
 
-  constructor() { }
+  darkMode: boolean;
+
+  constructor(public ui: UiService) {
+  }
 
   ngOnInit() {
+    this.ui.darkModeState.subscribe((isDark) => {
+      this.darkMode = isDark;
+    });
   }
+
 
 }
